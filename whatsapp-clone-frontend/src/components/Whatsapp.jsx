@@ -11,10 +11,8 @@ const Header = styled(AppBar)`
 
 const Component = styled(Box)`
     height : 100vh;
-    background : black;
-    margin :0px;
-    padding :0px;
-    box-sizing : border-box;
+    background : #1f2223;
+
 `
 const Whatsapp = () => {
   return (
