@@ -3,7 +3,8 @@ import Login from "./Auth/Login";
 import { AppBar, Box, Toolbar, styled } from "@mui/material";
 import { useContext } from "react";
 import { AccountContext } from "../context/accountProvider";
-import ChatArea from "./ChattingArea/ChatArea";
+
+import Chatbg from "./ChattingArea/Chatbg";
 
 const Header = styled(AppBar)`
   height: 220px;
@@ -20,7 +21,7 @@ const Whatsapp = () => {
   return (
     <Component>
       {account ? (
-        <ChatArea />
+        <Chatbg />
       ) : (
         <>
           <Header>
