@@ -3,7 +3,9 @@ import React from "react";
 
 import { qrCodeImage } from "../../constants/data";
 import { GoogleLogin } from "@react-oauth/google";
-import {jwtDecode} from 'jwt-decode'
+import { jwtDecode } from "jwt-decode";
+import { useContext } from "react";
+import { AccountContext } from "../../context/accountProvider";
 
 const dialogStyle = {
   height: "96%",
@@ -53,18 +55,18 @@ const StyledList = styled(List)`
 `;
 
 const Login = () => {
+  const { setAccount } = useContext(AccountContext); // using this function from context
 
   const onLoginSuccess = (res) => {
-    console.log("login successful",res);
-    const decoded_Data = jwtDecode(res.credential)
+    console.log("login successful", res);
+    const decoded_Data = jwtDecode(res.credential);
     console.log(decoded_Data);
-    
-
-  }
+    setAccount(decoded_Data);
+  };
 
   const onLoginError = (res) => {
-    console.log('login failed');
-  }
+    console.log("login failed");
+  };
   return (
     <div>
       <Dialog open={true} PaperProps={{ sx: dialogStyle }}>
@@ -86,9 +88,15 @@ const Login = () => {
             </StyledList>
           </FirstChild>
           {/* second child box */}
-          <SecondChild style={{position: 'relative'}}>
+          <SecondChild style={{ position: "relative" }}>
             <QRCode src={qrCodeImage} alt="qrImage" />
-            <box style={{position: "absolute",top:'50%',transform: "translateX(-125%)"}}>
+            <box
+              style={{
+                position: "absolute",
+                top: "50%",
+                transform: "translateX(-125%)",
+              }}
+            >
               <GoogleLogin onSuccess={onLoginSuccess} onError={onLoginError} />
             </box>
           </SecondChild>

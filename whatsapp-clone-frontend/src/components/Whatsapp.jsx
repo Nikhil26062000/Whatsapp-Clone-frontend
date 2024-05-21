@@ -1,6 +1,10 @@
 import React from "react";
 import Login from "./Auth/Login";
 import { AppBar, Box, Toolbar, styled } from "@mui/material";
+import { useContext } from "react";
+import { AccountContext } from "../context/accountProvider";
+
+import Chatbg from "./ChattingArea/Chatbg";
 
 const Header = styled(AppBar)`
   height: 220px;
@@ -13,12 +17,20 @@ const Component = styled(Box)`
   background: #1f2223;
 `;
 const Whatsapp = () => {
+  const { account } = useContext(AccountContext);
   return (
     <Component>
-      <Header>
-        <Toolbar></Toolbar>
-      </Header>
-      <Login />
+      {account ? (
+        <Chatbg />
+      ) : (
+        <>
+          <Header>
+            <Toolbar></Toolbar>
+          </Header>
+
+          <Login />
+        </>
+      )}
     </Component>
   );
 };
