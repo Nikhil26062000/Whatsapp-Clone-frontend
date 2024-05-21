@@ -55,14 +55,13 @@ const StyledList = styled(List)`
 `;
 
 const Login = () => {
-
-  const {setAccount} = useContext(AccountContext); // using this function from context
+  const { setAccount } = useContext(AccountContext); // using this function from context
 
   const onLoginSuccess = (res) => {
     console.log("login successful", res);
     const decoded_Data = jwtDecode(res.credential);
     console.log(decoded_Data);
-    setAccount(decoded_Data)
+    setAccount(decoded_Data);
   };
 
   const onLoginError = (res) => {

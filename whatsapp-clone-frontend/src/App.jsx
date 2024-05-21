@@ -4,7 +4,6 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import { CLIENT_ID } from "./sensitive";
 import AccountProvider from "./context/accountProvider";
 
-
 function App() {
   return (
     <>
