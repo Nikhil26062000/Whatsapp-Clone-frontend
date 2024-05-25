@@ -12,24 +12,24 @@ const LeftSide = () => {
     <div className="w-[4%] bg-[#222e35] flex flex-col items-center justify-evenly">
       <div className="w-full h-[30vh] flex flex-col items-center justify-evenly">
         <IconButton >
-          <MessageIcon className="text-gray-100"/>
+          <MessageIcon className="text-[#aebac1]"/>
         </IconButton>
         <IconButton>
-          <GroupsIcon className="text-gray-100"/>
+          <GroupsIcon className="text-[#aebac1]"/>
         </IconButton>
         <IconButton>
-          <RadioButtonCheckedIcon className="text-gray-100"/>
+          <RadioButtonCheckedIcon className="text-[#aebac1]"/>
         </IconButton>
         <IconButton>
           
-          <SurroundSoundIcon className="text-gray-100"/>
+          <SurroundSoundIcon className="text-[#aebac1]"/>
         </IconButton>
       </div>
       <div className="w-full h-[55vh]"></div>
 
       <div className="w-full h-[15vh] flex flex-col items-center justify-evenly gap-3 pb-2">
         <IconButton>
-          <SettingsIcon className="text-gray-100"/>
+          <SettingsIcon className="text-[#aebac1]"/>
         </IconButton>
 
         <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
