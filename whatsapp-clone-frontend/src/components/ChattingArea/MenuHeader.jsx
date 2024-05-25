@@ -10,7 +10,7 @@ const MenuHeader = () => {
         <Box className="flex px-5 py-5">
             <Typography variant="h5" className="">Chats</Typography>
             <Box className="ml-auto flex">
-                <AddCommentIcon className="mr-10 text-gray-400"/>
+                <AddCommentIcon className="mr-10 mt-1 text-[#aebac1]"/>
                 <ThreeDot/>
             </Box>
         </Box>
