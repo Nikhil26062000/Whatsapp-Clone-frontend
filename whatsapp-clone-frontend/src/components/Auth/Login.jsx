@@ -6,6 +6,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { useContext } from "react";
 import { AccountContext } from "../../context/accountProvider";
+import {addUser} from '../../services/api.js'
 
 const dialogStyle = {
   height: "96%",
@@ -62,6 +63,7 @@ const Login = () => {
     const decoded_Data = jwtDecode(res.credential);
     console.log(decoded_Data);
     setAccount(decoded_Data);
+    addUser(decoded_Data);
   };
 
   const onLoginError = (res) => {
