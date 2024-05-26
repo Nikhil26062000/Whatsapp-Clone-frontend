@@ -58,12 +58,12 @@ const StyledList = styled(List)`
 const Login = () => {
   const { setAccount } = useContext(AccountContext); // using this function from context
 
-  const onLoginSuccess = (res) => {
+  const onLoginSuccess = async(res) => {
     console.log("login successful", res);
     const decoded_Data = jwtDecode(res.credential);
     console.log(decoded_Data);
     setAccount(decoded_Data);
-    addUser(decoded_Data);
+    await addUser(decoded_Data);
   };
 
   const onLoginError = (res) => {
