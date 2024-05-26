@@ -11,3 +11,12 @@ export const addUser = async (req, res) => {
     console.log("error", error.message);
   }
 };
+
+export const getUser = async (req, res) =>{
+  try {
+    const userData = await User.find({})
+    res.json({ message: "User data fetched successfully", userData });
+  } catch (error) {
+    console.log("error fetching the User's Data ", error.message);
+  }
+}
