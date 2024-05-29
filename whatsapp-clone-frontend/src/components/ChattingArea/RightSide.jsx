@@ -1,10 +1,17 @@
 import React from 'react'
 import EmptyChat from './EmptyChat'
 import LockIcon from '@mui/icons-material/Lock';
+import { useContext } from 'react';
+import { AccountContext } from '../../context/accountProvider';
+import ActiveChatArea from '../ChattingArea/Active-Chatting-Area/ActiveChatArea'
 
 const RightSide = () => {
+
+  const {account} = useContext(AccountContext);
   return (
-    <div className='w-[60%] bg-transparent flex flex-col items-center justify-center'>
+    <div className='w-[65%] bg-transparent overflow-x-auto overflow-y-auto'>
+      {account!=null ? <ActiveChatArea/> : <>
+      <div className='w-[65%] bg-transparent flex flex-col items-center justify-center'>
       <div className='w-[300px]'>
       <EmptyChat/>
       </div>
@@ -15,6 +22,9 @@ const RightSide = () => {
       <p  className='text-[#667781]'><LockIcon className='p-1 mr-1'/>Your personal messages are end-to-end encrypted</p>
       </div>
     </div>
+    </>}
+    </div>
+    
   )
 }
 
