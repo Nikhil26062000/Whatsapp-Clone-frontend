@@ -75,7 +75,7 @@ const Login = () => {
         {/* Parent Box which contains two child boxes */}
         <Parent>
           {/* first child box */}
-          <FirstChild>
+        <FirstChild >
             <Title>Use Whatsapp on your Computer</Title>
             <StyledList>
               <ListItem>1. Open Whatsapp on your Computer</ListItem>
@@ -90,13 +90,13 @@ const Login = () => {
             </StyledList>
           </FirstChild>
           {/* second child box */}
-          <SecondChild style={{ position: "relative" }}>
+          <SecondChild style={{ position: "relative" ,display: "flex", marginLeft:"auto",marginRight:"auto"}}>
             <QRCode src={qrCodeImage} alt="qrImage" />
             <Box
               style={{
                 position: "absolute",
                 top: "50%",
-                transform: "translateX(-125%)",
+                transform: "translateX(0%)",
               }}
             >
               <GoogleLogin onSuccess={onLoginSuccess} onError={onLoginError} />
