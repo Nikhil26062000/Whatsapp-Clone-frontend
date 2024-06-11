@@ -6,8 +6,12 @@ import SurroundSoundIcon from "@mui/icons-material/SurroundSound";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Avatar from "@mui/material/Avatar";
 import { IconButton } from "@mui/material";
+import { useContext } from "react";
+import { AccountContext } from "../../context/accountProvider";
 
 const LeftSide = () => {
+
+  const {account} = useContext(AccountContext);
   return (
     <div className="w-[4%] bg-[#222e35] flex flex-col items-center justify-evenly">
       <div className="w-full h-[30vh] flex flex-col items-center justify-evenly">
@@ -32,7 +36,7 @@ const LeftSide = () => {
           <SettingsIcon className="text-[#aebac1]"/>
         </IconButton>
 
-        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+        <Avatar alt="Remy Sharp" src={account.picture} />
       </div>
     </div>
   );

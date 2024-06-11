@@ -92,7 +92,7 @@ const Login = () => {
           {/* second child box */}
           <SecondChild style={{ position: "relative" }}>
             <QRCode src={qrCodeImage} alt="qrImage" />
-            <box
+            <Box
               style={{
                 position: "absolute",
                 top: "50%",
@@ -100,7 +100,7 @@ const Login = () => {
               }}
             >
               <GoogleLogin onSuccess={onLoginSuccess} onError={onLoginError} />
-            </box>
+            </Box>
           </SecondChild>
         </Parent>
       </Dialog>
