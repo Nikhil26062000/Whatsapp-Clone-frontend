@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getUser } from "../../services/api.js";
+import { getUser, setConversation } from "../../services/api.js";
 import { dummyDP } from "../../constants/data.js";
 import { useContext } from "react";
 import { AccountContext } from "../../context/accountProvider.jsx";
@@ -22,9 +22,10 @@ const MenuUserList = () => {
     fetchData();
   }, []);
 
-  const handlePersonDetails = (userData) =>{
+  const handlePersonDetails =async (userData) =>{
     setPersonDetails(userData);
     console.log(personDetails);
+    await setConversation({senderId:account.sub,receiverId:userData.sub})
   }
   return (
     <div className="w-[100%] h-16 mt-2">

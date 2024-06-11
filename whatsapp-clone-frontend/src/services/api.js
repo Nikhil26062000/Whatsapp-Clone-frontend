@@ -21,3 +21,11 @@ export const getUser = async () =>{
         console.log('Errroe while getting user',error.message);
     }
 }
+
+export const setConversation = async(data) =>{
+    try {
+        await axios.post(`${url}/conversation/add`,data);
+    } catch (error) {
+        console.log('Errroe while setting conversation',error.message);
+    }
+}
