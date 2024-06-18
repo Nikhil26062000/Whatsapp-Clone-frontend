@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getUser, setConversation } from "../../services/api.js";
-import { dummyDP } from "../../constants/data.js";
+
 import { useContext } from "react";
 import { AccountContext } from "../../context/accountProvider.jsx";
 
@@ -46,6 +46,7 @@ const MenuUserList = ({ filterUser }) => {
                 className="w-[50px] h-[50px] rounded-full mr-3"
               />
               <p className="font-semibold">{userData.name}</p>
+              {/* <p>This is msg</p> */}
             </div>
           ) : (
             ""

@@ -59,3 +59,14 @@ export const getMessageFromDB = async (conversationId) => {
         console.log("Error while getting message while calling API", error);
     }
 };
+
+
+export const uploadFileToDB = async (data) => {
+    try {
+       return await axios.post(`${url}/file/upload`, data); // Ensure this matches the route in your backend
+    } catch (error) {
+        console.log("Error while uploading data to db from frontend", error.message);
+    }
+};
+
+
