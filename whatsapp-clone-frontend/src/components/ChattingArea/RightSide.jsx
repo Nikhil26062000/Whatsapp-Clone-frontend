@@ -10,7 +10,7 @@ const RightSide = () => {
   const { account, personDetails } = useContext(AccountContext);
   return (
     <div className="w-[65%] bg-transparent overflow-x-auto overflow-y-auto">
-      {Object.keys(personDetails).length>0 ? (
+      {Object.keys(personDetails).length > 0 ? (
         <ActiveChatArea />
       ) : (
         <>

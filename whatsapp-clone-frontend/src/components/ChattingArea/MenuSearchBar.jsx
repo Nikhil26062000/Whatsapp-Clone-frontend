@@ -2,7 +2,7 @@ import React from "react";
 import { InputBase, Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-const MenuSearchBar = () => {
+const MenuSearchBar = ({setFilterUser}) => {
   return (
     <>
       <Box className="flex">
@@ -13,8 +13,9 @@ const MenuSearchBar = () => {
           />
 
           <InputBase
-            className="w-full bg-[#202c33] text-[#7d8d97]  rounded-lg pl-16 py-1"
+            className="w-full bg-[#202c33] !text-[#d1d7db]  rounded-lg pl-16 py-1"
             placeholder="Search"
+            onChange={(e)=>setFilterUser(e.target.value)}
           />
         </Box>
       </Box>
