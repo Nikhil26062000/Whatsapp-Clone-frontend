@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { getMessageFromDB } from "../../../services/api";
 import GetAppIcon from "@mui/icons-material/GetApp";
-import { formatDate } from "../../../utils/common-utils";
+import { formatDate,downloadMedia } from "../../../utils/common-utils";
 import { useContext } from "react";
 import { AccountContext } from "../../../context/accountProvider";
 import { iconPDF } from "../../../constants/data";
@@ -52,7 +52,8 @@ const ImageMessage = ({ message }) => {
               <p>{message.msg.split("/").pop()}</p>
             </div>
             <span className="text-xs pl-5 break-keep flex-shrink-0 block mt-auto  bottom-0 right-0">
-              <GetAppIcon className=" bottom-0 right-14 mr-2" />
+              <GetAppIcon className=" bottom-0 right-14 mr-2"
+              onClick={(e)=>downloadMedia(e,message.msg)} />
               {formatDate(message.createdAt)}
             </span>
           </div>
@@ -62,7 +63,7 @@ const ImageMessage = ({ message }) => {
             <span className="text-xs pl-5 break-keep flex-shrink-0 block mt-auto absolute bottom-0 right-0">
               {formatDate(message.createdAt)}
             </span>
-            <GetAppIcon className="absolute bottom-0 right-14" />
+            <GetAppIcon className="absolute bottom-0 right-14"onClick={(e)=>downloadMedia(e,message.msg)}  />
           </div>
         )}
       </div>
