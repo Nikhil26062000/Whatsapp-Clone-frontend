@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ActiveChatHeader from "./ActiveChatHeader";
 import ActiveChatBody from "./ActiveChatBody";
 import ActiveChatAreaFooter from "./ActiveChatAreaFooter";
@@ -18,6 +18,7 @@ const ActiveChatArea = () => {
   const [toggle, setToggle] = useState(true);
   const [file, setFile] = useState();
   const [imageUrl,setImageUrl] = useState('');
+  const scrollRef = useRef();
 
   const sendText = async (e) => {
     
@@ -74,10 +75,15 @@ const ActiveChatArea = () => {
     getConversation();
   }, [personDetails.sub, toggle]);
 
+  useEffect(()=>{
+    scrollRef.current?.scrollIntoView({transition:'smooth'})
+  },[chatMessage])
+
   return (
     <div className="">
       <ActiveChatHeader />
-      <ActiveChatBody chatMessage={chatMessage} />
+      {/* With ActiveChatBody now using React.forwardRef, ActiveChatArea can pass the ref to it, and then use that ref to scroll to the bottom whenever the chatMessage array changes */}
+      <ActiveChatBody chatMessage={chatMessage} ref={scrollRef}/>  
       <ActiveChatAreaFooter
         setTextValue={setTextValue}
         sendText={sendText}
