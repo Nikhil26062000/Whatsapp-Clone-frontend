@@ -14,9 +14,9 @@ const ActiveChatArea = () => {
   const [textValue, setTextValue] = useState("");
   const [convoFromDB, setConvoFromDB] = useState(null);
   const [convoFromDatabase, setConvoFromDatabase] = useState(null);
-  const { account, personDetails,socket,setActiveUser } = useContext(AccountContext);
+  const { account, personDetails,socket,setActiveUser,setToggle,toggle } = useContext(AccountContext);
   const [chatMessage, setChatMessage] = useState([]);
-  const [toggle, setToggle] = useState(true);
+
   const [file, setFile] = useState();
   const [imageUrl,setImageUrl] = useState('');
   const [incomingMessage, setIncomingMessage] = useState(null)
