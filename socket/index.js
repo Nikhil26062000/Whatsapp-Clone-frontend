@@ -2,7 +2,9 @@ import {Server} from "socket.io";
 
 const io = new Server(9000,{
     cors:{
-        origin:'http://localhost:5173'
+        origin:'http://localhost:5173',
+        pingInterval: 10000, // 10 seconds
+        pingTimeout: 5000 // 5 seconds
     }
 })
 
