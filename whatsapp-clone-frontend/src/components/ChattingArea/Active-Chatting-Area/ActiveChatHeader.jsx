@@ -9,14 +9,14 @@ import { AccountContext } from '../../../context/accountProvider';
 
 const ActiveChatHeader = () => {
 
-  const {personDetails} = useContext(AccountContext)
+  const {personDetails,activeUser} = useContext(AccountContext)
   return (
     <div className='flex w-[100%] h-[10vh] bg-[#202c33]'>
         <div className='flex items-center gap-3 px-3'>
             <img src={personDetails ? personDetails.picture : dummyDP} className='w-[50px] h-[50px] rounded-full'/>
             <div className='flex flex-col'>
             <p>{personDetails.name ? personDetails.name : "Name"}</p>
-            <p className='text-xs pt-1'>Online</p>
+            <p className='text-xs pt-1'>{activeUser?.find(user=>user.sub===personDetails.sub)?"online":"offline"}</p>
             </div>
             
         </div>
