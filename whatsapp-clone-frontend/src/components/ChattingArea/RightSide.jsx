@@ -9,12 +9,12 @@ import { emptyChatImage } from "../../constants/data";
 const RightSide = () => {
   const { account, personDetails } = useContext(AccountContext);
   return (
-    <div className="w-[65%] bg-transparent overflow-x-auto overflow-y-auto">
+    <div className="w-[70%] bg-transparent overflow-x-auto overflow-y-auto">
       {Object.keys(personDetails).length > 0 ? (
         <ActiveChatArea />
       ) : (
         <>
-          <div className="w-[65%] bg-transparent flex flex-col items-center justify-center mx-auto my-[10vh]">
+          <div className="w-[67%] bg-transparent flex flex-col items-center justify-center mx-auto my-[10vh]">
             <div className="w-[300px]">
               <img src={emptyChatImage} alt="" />
             </div>
